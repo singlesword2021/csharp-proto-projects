@@ -60,3 +60,7 @@ W:\github-singlesword2021\csharp-proto-projects\ToolsApp\obj\Debug\net6.0\refint
 W:\github-singlesword2021\csharp-proto-projects\ToolsApp\obj\Debug\net6.0\ToolsApp.pdb
 W:\github-singlesword2021\csharp-proto-projects\ToolsApp\obj\Debug\net6.0\ToolsApp.genruntimeconfig.cache
 W:\github-singlesword2021\csharp-proto-projects\ToolsApp\obj\Debug\net6.0\ref\ToolsApp.dll
+W:\github-singlesword2021\csharp-proto-projects\ToolsApp\bin\Debug\net6.0\Fleck.dll
+W:\github-singlesword2021\csharp-proto-projects\ToolsApp\bin\Debug\net6.0\Newtonsoft.Json.dll
+W:\github-singlesword2021\csharp-proto-projects\ToolsApp\bin\Debug\net6.0\CommonTools.dll
+W:\github-singlesword2021\csharp-proto-projects\ToolsApp\bin\Debug\net6.0\CommonTools.pdb

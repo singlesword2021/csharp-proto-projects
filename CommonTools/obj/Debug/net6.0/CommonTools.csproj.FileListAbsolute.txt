@@ -1,0 +1,12 @@
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\bin\Debug\net6.0\CommonTools.deps.json
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\bin\Debug\net6.0\CommonTools.dll
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\bin\Debug\net6.0\CommonTools.pdb
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.csproj.AssemblyReference.cache
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.GeneratedMSBuildEditorConfig.editorconfig
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.AssemblyInfoInputs.cache
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.AssemblyInfo.cs
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.csproj.CoreCompileInputs.cache
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.dll
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\refint\CommonTools.dll
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\CommonTools.pdb
+W:\github-singlesword2021\csharp-proto-projects\CommonTools\obj\Debug\net6.0\ref\CommonTools.dll
