@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <script>
+        //ws = new WebSocket("ws://www.singlesword.local:50000");
+        ws = new WebSocket("ws://192.168.4.168:50000");
+        ws.onopen = function () {
+            ws.send('websocekt测试');
+        };
+        ws.onmessage = function (e) {
+            let logItem = JSON.parse(e.data);
+            let logStyleClass = "log-level-" + logItem.level;
+            let messageHtml = "<div class=" + logStyleClass + ">" + logItem.message + "</div>";
+            document.getElementById("log-box").innerHTML += messageHtml;
+        };
+    </script>
+    <style>
+        .log-level-0 {
+            color:green;
+        }
+        .log-level-1 {
+            color: black;
+        }
+        .log-level-2 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Test information:</p>
+    <div id="log-box"></div>
+</body>
+</html>

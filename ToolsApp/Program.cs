@@ -1,4 +1,6 @@
-using NLog;
+using Serilog;
+using ToolsApp.Models;
+using WebSocketMessageServer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,12 +11,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+// Customed services
+builder.Services.AddHostedService<MessageWebsocketServer<LogItem>>();// HostedService
 
-NLog.LogManager.Setup().LoadConfiguration(builder => {
-    builder.ForLogger().FilterMinLevel(NLog.LogLevel.Info).WriteToConsole();
-    //builder.ForLogger().FilterMinLevel(NLog.LogLevel.Debug).WriteToFile(fileName: "file.txt");
-});
+builder.Host.UseSerilog();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -23,7 +24,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

@@ -1,4 +1,4 @@
-﻿using NLog;
+﻿using Serilog;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -9,7 +9,6 @@ namespace MultiThreadsDemo
 {
     public class MainThread
     {
-        private ILogger _Logger;
         private BlockingCollection<long> _Queue = new BlockingCollection<long>();
         private int _MinThreadCount;
         private int _MaxThreadCount;
@@ -17,7 +16,8 @@ namespace MultiThreadsDemo
     
         public MainThread()
         {
-            _Logger = NLog.LogManager.GetCurrentClassLogger();
+            //_Logger = Serilog.LogManager.GetCurrentClassLogger();
+            Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
             // set to processor count
             _MinThreadCount = System.Environment.ProcessorCount;
             _MaxThreadCount = 20;
@@ -50,28 +50,28 @@ namespace MultiThreadsDemo
         {
             var partitioner = Partitioner.Create(_Queue.GetConsumingEnumerable(), EnumerablePartitionerOptions.NoBuffering);
             var parallelOptions = new ParallelOptions { MaxDegreeOfParallelism = _MaxThreadCount };
-            _Logger.Info("Starting");
+            Log.Information("Starting");
             _Result = new List<long>();
             while (!_Queue.IsCompleted)
             {
                 Parallel.ForEach(partitioner, parallelOptions, Calculate);
             }
-            _Logger.Info("Finished");
+            Log.Information("Finished");
 
-            _Logger.Info("Total:" + _Result.Count);
+            Log.Information("Total:" + _Result.Count);
 
             _Result.ForEach(number => {
-                _Logger.Info(number);
+                Log.Information(number.ToString());
             });
         }
 
         // 27的倍数
         private void Calculate(long number)
         {
-            _Logger.Info("Processing:" + number);
+            Log.Information("Processing:" + number);
             if (number % 27 == 0)
             {
-                _Logger.Info("=====Got:" + number);
+                Log.Information("=====Got:" + number);
                 _Result.Add(number);
             }
         }

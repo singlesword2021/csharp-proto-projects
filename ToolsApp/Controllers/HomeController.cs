@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ToolsApp.Services.LogSyncService;
 
 namespace ToolsApp.Controllers
 {
@@ -10,6 +11,14 @@ namespace ToolsApp.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        [Route("ws")]
+        public IActionResult WSIndex()
+        {
+            return PhysicalFile("W:/github-singlesword2021/csharp-proto-projects/ToolsApp/Web/index.html", "text/html");
+        }
+
 
         // GET: HomeController/Details/5
         public ActionResult Details(int id)
